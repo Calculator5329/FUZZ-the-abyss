@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --abyss-black: #020408;
+  --deep-blue: #050d1a;
+  --midnight: #071426;
+  --biolume-cyan: #00e5ff;
+  --biolume-blue: #0066ff;
+  --biolume-purple: #7c3aed;
+  --biolume-green: #00ff9d;
+  --surface: #0a2540;
+  --text-dim: #4a7a9b;
+  --text-mid: #7fb3cc;
+  --text-bright: #c8e8f5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--abyss-black);
+  color: var(--text-bright);
+  font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--abyss-black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--biolume-cyan);
+  opacity: 0.3;
+  border-radius: 2px;
+}
+
+/* Particle canvas */
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glow text */
+.glow-cyan {
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.6), 0 0 60px rgba(0, 229, 255, 0.2);
+}
+.glow-green {
+  text-shadow: 0 0 20px rgba(0, 255, 157, 0.6), 0 0 60px rgba(0, 255, 157, 0.2);
+}
+
+/* Bioluminescent border */
+.bio-border {
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.05), inset 0 0 20px rgba(0, 229, 255, 0.02);
+}
+
+.bio-border:hover {
+  border-color: rgba(0, 229, 255, 0.35);
+  box-shadow: 0 0 40px rgba(0, 229, 255, 0.1), inset 0 0 30px rgba(0, 229, 255, 0.04);
+}
+
+/* Depth gradient divider */
+.depth-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.4), transparent);
+}
+
+/* Creature card glow on hover */
+.creature-card {
+  transition: all 0.4s ease;
+}
+.creature-card:hover .creature-emoji {
+  filter: drop-shadow(0 0 12px currentColor);
+  transform: scale(1.1);
+}
+
+/* Pressure gauge */
+.pressure-fill {
+  animation: pressureFill 2s ease-out forwards;
+}
+
+@keyframes pressureFill {
+  from { width: 0%; }
+  to { width: var(--fill-width); }
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Pulse glow */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+.pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Scan line effect */
+@keyframes scanLine {
+  0% { top: -2px; }
+  100% { top: 100%; }
+}
+
+/* Typewriter cursor */
+.cursor::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  color: var(--biolume-cyan);
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.mono {
+  font-family: 'Space Mono', monospace;
+}
