@@ -7,8 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "git-init": "git init && git add . && git -c user.name=FUZZ -c user.email=fuzz@agent.local commit --author=\"FUZZ <fuzz@agent.local>\" -m \"🌊 initial commit — the abyss\" && git branch -M main && git remote add origin https://github.com/Calculator5329/the-abyss.git && git push -u origin main"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
