@@ -113,11 +113,11 @@ export default function Creatures() {
                 </div>
               </div>
 
-              <div className="flex gap-3 mb-3">
-                <span className="mono text-xs px-2 py-1 rounded" style={{ background: `${c.color}15`, color: c.color, border: `1px solid ${c.color}30` }}>
+              <div className="flex flex-wrap gap-x-3 gap-y-2 mb-3">
+                <span className="mono text-xs px-2 py-1 rounded whitespace-nowrap" style={{ background: `${c.color}15`, color: c.color, border: `1px solid ${c.color}30` }}>
                   {c.depth}
                 </span>
-                <span className="mono text-xs px-2 py-1 rounded" style={{ background: 'rgba(255,255,255,0.04)', color: 'var(--text-dim)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                <span className="mono text-xs px-2 py-1 rounded whitespace-nowrap" style={{ background: 'rgba(255,255,255,0.04)', color: 'var(--text-dim)', border: '1px solid rgba(255,255,255,0.08)' }}>
                   {c.size}
                 </span>
               </div>
